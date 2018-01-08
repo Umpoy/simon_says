@@ -12,9 +12,8 @@
 .button {
 	position:absolute;
 	width:190px;
-	height:190px;
-  margin: 20px;
-  pointer-events: none;
+    height:190px;
+    margin: 20px;
 }
 
 #green {
@@ -43,4 +42,8 @@
 	right:0;
 	background-color:blue;
 	border-radius:0 0 100% 0 ;
+}
+
+.on {
+    opacity: .5
 }
