@@ -7,7 +7,7 @@ var hold_AI_array = [];
 var hold_players_array = [];
 var simons_turn = null
 var i = 0
-var game_over = null
+var game_over = true
 
 $(document).ready(function () {
     assignClickHandlers()
@@ -47,6 +47,7 @@ function light_up_element() {
 }
 
 function AIs_turn() {
+    $('.circle').css('background-color', 'red')
     simons_turn = true
     game_over = false
     hold_players_array = []
@@ -58,6 +59,7 @@ function AIs_turn() {
         $('#' + hold_AI_array[i]).click();
         i++
         if (i == hold_AI_array.length) {
+            $('.circle').css('background-color', 'green')
             clearInterval(set_interval)
             i = 0
             simons_turn = false
@@ -73,14 +75,19 @@ function players_turn() {
     if (hold_players_array[i] !== hold_AI_array[i]) {
         game_over = true
         game_over_audio.play('')
+        console.log('game over')
+        $('.circle').css('background-color', 'black')
+        i = 0
+        return
     }
     i++
-    console.log(hold_players_array)
     if (i == hold_AI_array.length) {
-        setTimeout(function () {
-            i = 0
-            AIs_turn()
-        }, 1000)
+        i = 0
+        AIs_turn()
+        // setTimeout(function () {
+        //     i = 0
+        //     AIs_turn()
+        // }, 1000)
     }
 
 }
