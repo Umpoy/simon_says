@@ -8,8 +8,8 @@ body {
 
 .gameBoard {
 	position:relative;
-	width:440px;
-	height:440px;
+	width:60vh;
+	height:60vh;
 	margin:0 auto;
     margin-top: 20vh;
     border: solid 1px black;
@@ -22,9 +22,9 @@ body {
 
 .button {
 	position:absolute;
-	width:190px;
-    height:190px;
-    margin: 20px;
+	width:27vh;
+    height:27vh;
+    margin: 2vh;
 }
 
 #green {
@@ -59,23 +59,23 @@ body {
     position:absolute;
     background-color:black;
     border: 20px solid black;
-    width:200px;
-    height:200px;
-    top:120px;
-    left:120px;
+    width:27vh;
+    height:27vh;
+    top:27%;
+    left:27%;
     border-radius:50%;
     align-items: center;
     justify-content: center;
   }
 
-h1 {
+.simon {
     text-align: center;
     color: white;
+    font-size: 5vh;
+    margin-top: 3vh;
 }
 
-button{
-    margin: 0 auto;
-}
+
 
 .on {
     opacity: .5
@@ -84,11 +84,10 @@ button{
 .circle {
     border: 1px solid black;
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    display: inline-block;
+    height: 5vh;
+    width: 5vh;
     background-color: green;
     position: absolute;
-    margin-left: 30px;
+    margin-left: 38%;
+    
 }
-

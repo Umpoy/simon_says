@@ -6,7 +6,7 @@ var game_over_audio = new Audio('http://www.freesound.org/data/previews/331/3319
 var hold_AI_array = [];
 var hold_players_array = [];
 var simons_turn = null
-var i = 0
+var counter = 0
 var game_over = true
 
 $(document).ready(function () {
@@ -18,7 +18,7 @@ function start_game() {
     AIs_turn()
 }
 function assignClickHandlers() {
-    $('button').on('click', start_game)
+    $('.circle').on('click', start_game)
     $('.button').click(light_up_element);
     $('.button').click(players_turn);
     $('#green').on('click', function () {
@@ -56,12 +56,12 @@ function AIs_turn() {
     hold_AI_array.push(color_picked);
     console.log(hold_AI_array)
     var set_interval = setInterval(function () {
-        $('#' + hold_AI_array[i]).click();
-        i++
-        if (i == hold_AI_array.length) {
+        $('#' + hold_AI_array[counter]).click();
+        counter++
+        if (counter == hold_AI_array.length) {
             $('.circle').css('background-color', 'green')
             clearInterval(set_interval)
-            i = 0
+            counter = 0
             simons_turn = false
         }
     }, 1000);
@@ -72,17 +72,17 @@ function players_turn() {
         return
     }
     hold_players_array.push($(this).attr('id'))
-    if (hold_players_array[i] !== hold_AI_array[i]) {
+    if (hold_players_array[counter] !== hold_AI_array[counter]) {
         game_over = true
         game_over_audio.play('')
         console.log('game over')
-        $('.circle').css('background-color', 'black')
-        i = 0
+        $('.circle').css('background-color', 'yellow')
+        counter = 0
         return
     }
-    i++
-    if (i == hold_AI_array.length) {
-        i = 0
+    counter++
+    if (counter == hold_AI_array.length) {
+        counter = 0
         AIs_turn()
         // setTimeout(function () {
         //     i = 0
