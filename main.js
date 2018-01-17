@@ -54,7 +54,6 @@ function AIs_turn() {
     var color_choices = ['green', 'red', 'yellow', 'blue'];
     var color_picked = color_choices[Math.floor(Math.random() * color_choices.length)];
     hold_AI_array.push(color_picked);
-    console.log(hold_AI_array)
     var set_interval = setInterval(function () {
         $('#' + hold_AI_array[counter]).click();
         counter++
