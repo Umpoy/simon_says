@@ -84,10 +84,6 @@ function players_turn() {
     if (counter == hold_AI_array.length) {
         counter = 0
         AIs_turn()
-        // setTimeout(function () {
-        //     i = 0
-        //     AIs_turn()
-        // }, 1000)
     }
 
 }
